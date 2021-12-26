@@ -9,6 +9,8 @@ import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
+import com.example.newsapp.R
 import com.example.newsapp.adapters.NewsAdapter
 import com.example.newsapp.databinding.FragmentSearchNewsBinding
 import com.example.newsapp.utils.Constants.Companion.SEARCH_NEWS_THE_DELAY
@@ -46,6 +48,7 @@ class SearchNewsFragment : Fragment() {
         setUpRecyclerView()
         getData()
         searchItemInArticle()
+        setOnItemClickListener()
 
     }
 
@@ -102,6 +105,22 @@ class SearchNewsFragment : Fragment() {
                 }
             }
 
+        }
+
+    }
+
+    private fun setOnItemClickListener(){
+
+        newsAdapter.setOnItemClickListener {
+
+            val bundle = Bundle().apply {
+                putSerializable("article", it)
+
+            }
+            findNavController().navigate(
+
+                R.id.action_searchNewsFragment_to_articleNewsFragment, bundle
+            )
         }
 
     }
