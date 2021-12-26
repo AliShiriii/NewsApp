@@ -17,11 +17,11 @@ class NewsViewModel @Inject constructor(private val repository: NewsRepository) 
     val breakingNews: MutableLiveData<Resource<NewsResponse>> = MutableLiveData()
     val breakingNewsPage = 1
 
-//    init {
-//
-//        getBreakingNews("us")
-//
-//    }
+    init {
+
+        getBreakingNews("us")
+
+    }
 
     private fun getBreakingNews(countryCode: String) =
 
