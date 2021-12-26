@@ -5,13 +5,34 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.newsapp.databinding.ItemArticleNewsBinding
 import com.example.newsapp.model.Article
 
 class NewsAdapter : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
 
-    class NewsViewHolder constructor(binding: ItemArticleNewsBinding) :
-        RecyclerView.ViewHolder(binding.root)
+    inner class NewsViewHolder constructor(private val binding: ItemArticleNewsBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+
+        fun bind(article: Article) {
+
+            binding.apply {
+                Glide.with(itemView).load(article.urlToImage).into(ivArticleImage)
+                tvSource.text = article.source.name
+                tvTitle.text = article.title
+                tvDescription.text = article.description
+                tvPublishedAt.text = article.publishedAt
+
+                itemView.setOnClickListener {
+
+                    onClickListener?.let {
+                        it(article)
+                    }
+
+                }
+            }
+        }
+    }
 
     private val diffCallBack = object : DiffUtil.ItemCallback<Article>() {
         override fun areItemsTheSame(oldItem: Article, newItem: Article): Boolean {
@@ -44,20 +65,10 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
     override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
 
         val article = differ.currentList[position]
-        holder.itemView.apply {
 
-//            Glide.with(this).load(article.urlToImage).into(image)
-//            tvSource.text = article.source.name
-//            tvTitle.text = article.title
-//            tvDescription.text = article.description
-//            tvPublishedAt.text = article.publishedAt
+        if (article != null) {
 
-            setOnClickListener {
-
-                onClickListener?.let {
-                    it(article)
-                }
-            }
+            holder.bind(article)
         }
 
     }
@@ -67,6 +78,7 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
     fun setOnItemClickListener(listener: (Article) -> Unit) {
 
         onClickListener = listener
+
     }
 
     override fun getItemCount(): Int {
