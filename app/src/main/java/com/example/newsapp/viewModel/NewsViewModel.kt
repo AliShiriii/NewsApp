@@ -3,10 +3,10 @@ package com.example.newsapp.viewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.newsapp.model.Article
-import com.example.newsapp.model.NewsResponse
+//import com.example.newsapp.model.Article
+//import com.example.newsapp.model.NewsResponse
 //import com.example.newsapp.repository.NewsRepository
-import com.example.newsapp.utils.Resource
+//import com.example.newsapp.utils.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import retrofit2.Response
