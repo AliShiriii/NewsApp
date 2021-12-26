@@ -9,7 +9,7 @@ import androidx.fragment.app.viewModels
 import com.example.newsapp.R
 import com.example.newsapp.databinding.FragmentNewsArticleBinding
 import com.example.newsapp.databinding.FragmentSavedNewsBinding
-import com.example.newsapp.viewModel.NewsViewModel
+//import com.example.newsapp.viewModel.NewsViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
