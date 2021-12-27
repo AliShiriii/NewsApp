@@ -95,6 +95,11 @@ class BreakingNewsFragment : Fragment() {
                         val totalPages = newsResponse.totalResults / QUERY_PAGE_SIZE + 2
                         isLastPage = viewModel.breakingNewsPage == totalPages
 
+                        if (isLastPage){
+
+                                binding.breakingRecyclerView.setPadding(0, 0, 0, 0)
+
+                        }
                     }
 
                 }
@@ -146,9 +151,6 @@ class BreakingNewsFragment : Fragment() {
                 viewModel.getBreakingNews("us")
                 isScrolling = false
 
-            } else {
-
-                binding.breakingRecyclerView.setPadding(0, 0, 0, 0)
             }
 
         }
