@@ -11,8 +11,6 @@ class NewsRepository @Inject constructor(private val newsApi: NewsApi, private v
     suspend fun searchNews(searchQuery: String, pageNumber: Int) = newsApi.searchForNews(searchQuery, pageNumber)
 
     suspend fun insertArticle(article: Article) = newsDao.insertArticle(article)
-
     fun getSavedArticle() = newsDao.getAllArticle()
-
     suspend fun deleteArticle(article: Article) = newsDao.deleteArticle(article)
 }

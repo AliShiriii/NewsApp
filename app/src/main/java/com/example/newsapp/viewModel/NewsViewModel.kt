@@ -3,7 +3,6 @@ package com.example.newsapp.viewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.newsapp.db.NewsDao
 import com.example.newsapp.model.Article
 import com.example.newsapp.model.NewsResponse
 import com.example.newsapp.repository.NewsRepository
@@ -15,8 +14,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class NewsViewModel @Inject constructor(
-    private val repository: NewsRepository,
-    private val newsDao: NewsDao
+    private val repository: NewsRepository
 ) : ViewModel() {
 
     val breakingNews: MutableLiveData<Resource<NewsResponse>> = MutableLiveData()
@@ -74,14 +72,10 @@ class NewsViewModel @Inject constructor(
         return Resource.Error(response.message())
     }
 
-    fun insertArticle(article: Article) = viewModelScope.launch {
-        newsDao.insertArticle(article)
-    }
+    fun insertArticle(article: Article) =
+        viewModelScope.launch { repository.insertArticle(article) }
 
-    fun getSavedArticle() = newsDao.getAllArticle()
-
-    fun deleteArticle(article: Article) = viewModelScope.launch {
-        newsDao.deleteArticle(article)
-
-    }
+    fun getSavedArticle() = repository.getSavedArticle()
+    fun deleteArticle(article: Article) =
+        viewModelScope.launch { repository.deleteArticle(article) }
 }
