@@ -22,6 +22,7 @@ class ArticleNewsFragment : Fragment() {
     private lateinit var newsAdapter: NewsAdapter
     private val viewModel: NewsViewModel by viewModels()
     val args: ArticleNewsFragmentArgs by navArgs()
+    val article = args.article
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,17 +39,26 @@ class ArticleNewsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setData()
+        insertArticleToDataBase()
+
     }
 
     private fun setData() {
-
-        val article = args.article
 
         binding.webView.apply {
 
             webViewClient = WebViewClient()
             loadUrl(article.url)
 
+        }
+
+    }
+
+    private fun insertArticleToDataBase(){
+
+        binding.fab.setOnClickListener {
+
+            viewModel.insertArticle(article)
         }
 
     }
