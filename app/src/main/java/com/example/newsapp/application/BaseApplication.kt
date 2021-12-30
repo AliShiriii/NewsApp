@@ -4,9 +4,10 @@ import android.app.Application
 import android.content.Context
 import androidx.multidex.MultiDex
 import dagger.hilt.android.HiltAndroidApp
+import javax.inject.Inject
 
 @HiltAndroidApp
-class BaseApplication: Application() {
+class BaseApplication : Application() {
 
     //BaseApplication
     override fun attachBaseContext(base: Context) {

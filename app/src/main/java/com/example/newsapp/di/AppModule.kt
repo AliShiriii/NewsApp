@@ -40,8 +40,7 @@ object AppModule {
     @Provides
     @Singleton
     fun provideLogIntercept(builder: GsonBuilder): HttpLoggingInterceptor {
-        val logging: HttpLoggingInterceptor
-        logging = HttpLoggingInterceptor(PrettyPrintLogger(builder))
+        val logging: HttpLoggingInterceptor = HttpLoggingInterceptor(PrettyPrintLogger(builder))
         //it is a good practice not to write logs in release
         logging.setLevel(HttpLoggingInterceptor.Level.BODY)
         return logging

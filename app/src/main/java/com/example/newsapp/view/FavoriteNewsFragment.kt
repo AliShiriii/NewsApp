@@ -11,17 +11,16 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
-import com.example.newsapp.R
 import com.example.newsapp.adapters.NewsAdapter
-import com.example.newsapp.databinding.FragmentSavedNewsBinding
+import com.example.newsapp.databinding.FragmentFavoriteNewsBinding
 import com.example.newsapp.viewModel.NewsViewModel
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class SavedNewsFragment : Fragment() {
+class FavoriteNewsFragment : Fragment() {
 
-    private var _binding: FragmentSavedNewsBinding? = null
+    private var _binding: FragmentFavoriteNewsBinding? = null
     private val binding get() = _binding!!
     private val viewModel: NewsViewModel by viewModels()
     private lateinit var newsAdapter: NewsAdapter
@@ -32,7 +31,7 @@ class SavedNewsFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
 
-        _binding = FragmentSavedNewsBinding.inflate(inflater, container, false)
+        _binding = FragmentFavoriteNewsBinding.inflate(inflater, container, false)
 
         return binding.root
     }
@@ -43,22 +42,16 @@ class SavedNewsFragment : Fragment() {
         setUpRecyclerView()
         setOnItemClickListener()
         getAllArticleFromRoom()
+        itemCallback()
 
     }
 
     private fun setOnItemClickListener() {
 
-        newsAdapter.setOnItemClickListener {
+        newsAdapter.setOnItemClickListener {article ->
 
-            val bundle = Bundle().apply {
-                putSerializable("article", it)
+            findNavController().navigate(FavoriteNewsFragmentDirections.actionFavoriteToDetails(article))
 
-            }
-
-            findNavController().navigate(
-
-                R.id.action_searchNewsFragment_to_articleNewsFragment, bundle
-            )
         }
 
     }

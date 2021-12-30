@@ -1,5 +1,6 @@
 package com.example.newsapp.viewModel
 
+import android.app.Application
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.ConnectivityManager.*
@@ -14,6 +15,7 @@ import com.example.newsapp.model.NewsResponse
 import com.example.newsapp.repository.NewsRepository
 import com.example.newsapp.utils.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
+import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.launch
 import retrofit2.Response
 import java.io.IOException
@@ -21,7 +23,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class NewsViewModel @Inject constructor(
-    baseApplication: BaseApplication,
+    baseApplication: Application,
     private val newsRepository: NewsRepository
 ) : AndroidViewModel(baseApplication) {
 

@@ -1,7 +1,6 @@
 package com.example.newsapp.view
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,7 +13,6 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.newsapp.R
 import com.example.newsapp.adapters.NewsAdapter
 import com.example.newsapp.databinding.FragmentSearchNewsBinding
 import com.example.newsapp.utils.Constants
@@ -126,16 +124,10 @@ class SearchNewsFragment : Fragment() {
 
     private fun setOnItemClickListener() {
 
-        newsAdapter.setOnItemClickListener {
+        newsAdapter.setOnItemClickListener { details ->
 
-            val bundle = Bundle().apply {
-                putSerializable("article", it)
+            findNavController().navigate(SearchNewsFragmentDirections.actionSearchToDetails(details))
 
-            }
-            findNavController().navigate(
-
-                R.id.action_searchNewsFragment_to_articleNewsFragment, bundle
-            )
         }
 
     }

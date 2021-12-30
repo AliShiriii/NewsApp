@@ -1,6 +1,5 @@
 package com.example.newsapp.view
 
-//import com.example.newsapp.viewModel.NewsViewModel
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,19 +9,18 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.example.newsapp.adapters.NewsAdapter
-import com.example.newsapp.databinding.FragmentNewsArticleBinding
+import com.example.newsapp.databinding.FragmentDetailsNewsBinding
 import com.example.newsapp.viewModel.NewsViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class ArticleNewsFragment : Fragment() {
+class DetailsNewsFragment : Fragment() {
 
-    private var _binding: FragmentNewsArticleBinding? = null
+    private var _binding: FragmentDetailsNewsBinding? = null
     private val binding get() = _binding!!
     private lateinit var newsAdapter: NewsAdapter
     private val viewModel: NewsViewModel by viewModels()
-    val args: ArticleNewsFragmentArgs by navArgs()
-    val article = args.article
+    val args: DetailsNewsFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,7 +28,7 @@ class ArticleNewsFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
 
-        _binding = FragmentNewsArticleBinding.inflate(inflater, container, false)
+        _binding = FragmentDetailsNewsBinding.inflate(inflater, container, false)
 
         return binding.root
     }
@@ -48,7 +46,7 @@ class ArticleNewsFragment : Fragment() {
         binding.webView.apply {
 
             webViewClient = WebViewClient()
-            loadUrl(article.url)
+            loadUrl(args.details.url!!)
 
         }
 
@@ -58,8 +56,8 @@ class ArticleNewsFragment : Fragment() {
 
         binding.fab.setOnClickListener {
 
-            viewModel.insertArticle(article)
-        }
+            viewModel.insertArticle(args.details)
 
+        }
     }
 }
