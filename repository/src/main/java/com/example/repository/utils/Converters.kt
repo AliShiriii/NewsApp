@@ -1,4 +1,4 @@
-package com.example.newsapp.utils
+package com.example.repository.utils
 
 import androidx.room.TypeConverter
 import com.example.repository.model.Source

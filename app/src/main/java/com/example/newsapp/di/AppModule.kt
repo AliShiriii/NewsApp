@@ -5,7 +5,6 @@ import androidx.room.Room
 import com.example.newsapp.api.Connectivity
 import com.example.newsapp.api.NewsApi
 import com.example.newsapp.api.PrettyPrintLogger
-import com.example.newsapp.db.NewsDataBase
 import com.example.newsapp.utils.Constants.Companion.BASE_URL
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
