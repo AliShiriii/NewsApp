@@ -6,6 +6,7 @@ import com.example.newsapp.api.Connectivity
 import com.example.newsapp.api.NewsApi
 import com.example.newsapp.api.PrettyPrintLogger
 import com.example.newsapp.utils.Constants.Companion.BASE_URL
+import com.example.repository.db.NewsDataBase
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module
@@ -26,11 +27,12 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideConnectivity(@ApplicationContext context: Context): Connectivity = Connectivity(context)
+    fun provideConnectivity(@ApplicationContext context: Context): Connectivity =
+        Connectivity(context)
 
     @Provides
     @Singleton
-    fun provideGsonBuilder() : GsonBuilder = GsonBuilder()
+    fun provideGsonBuilder(): GsonBuilder = GsonBuilder()
 
     @Provides
     @Singleton

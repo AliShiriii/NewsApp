@@ -1,6 +1,5 @@
 package com.example.newsapp.view
 
-//import com.example.newsapp.viewModel.NewsViewModel
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View

@@ -18,7 +18,6 @@ class DetailsNewsFragment : Fragment() {
 
     private var _binding: FragmentDetailsNewsBinding? = null
     private val binding get() = _binding!!
-    private lateinit var newsAdapter: NewsAdapter
     private val viewModel: NewsViewModel by viewModels()
     val args: DetailsNewsFragmentArgs by navArgs()
 

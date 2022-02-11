@@ -23,7 +23,7 @@
 
         <argument
             android:name="details"
-            app:argType="com.example.newsapp.model.Article" />
+            app:argType="com.example.repository.model.Article" />
     </fragment>
     <fragment
         android:id="@+id/Search"
