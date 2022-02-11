@@ -2,7 +2,7 @@ package com.example.newsapp.repository
 
 import com.example.newsapp.api.NewsApi
 import com.example.newsapp.db.NewsDao
-import com.example.newsapp.model.Article
+import com.example.repository.model.Article
 import javax.inject.Inject
 
 class NewsRepository @Inject constructor(private val newsApi: NewsApi, private val newsDao: NewsDao) {

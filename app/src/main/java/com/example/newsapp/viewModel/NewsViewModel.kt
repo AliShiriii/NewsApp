@@ -1,5 +1,6 @@
 package com.example.newsapp.viewModel
 
+import android.annotation.SuppressLint
 import android.app.Application
 import android.content.Context
 import android.net.ConnectivityManager
@@ -10,12 +11,11 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.newsapp.application.BaseApplication
-import com.example.newsapp.model.Article
-import com.example.newsapp.model.NewsResponse
 import com.example.newsapp.repository.NewsRepository
 import com.example.newsapp.utils.Resource
+import com.example.repository.model.Article
+import com.example.repository.model.NewsResponse
 import dagger.hilt.android.lifecycle.HiltViewModel
-import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.launch
 import retrofit2.Response
 import java.io.IOException
@@ -147,6 +147,7 @@ class NewsViewModel @Inject constructor(
         }
     }
 
+    @SuppressLint("MissingPermission")
     private fun hasInternetConnection(): Boolean {
 
         val connectivityManager = getApplication<BaseApplication>().getSystemService(
