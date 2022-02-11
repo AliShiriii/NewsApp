@@ -9,6 +9,8 @@ import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.newsapp.databinding.ActivityMainBinding
+import com.example.newsapp.view.FavoriteNewsFragment
+import com.example.newsapp.view.FavoriteNewsFragmentDirections
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
 
