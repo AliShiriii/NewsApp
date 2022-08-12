@@ -20,7 +20,7 @@
 * ViewBinding
 * DataStore(Preferences)
 
-#Design Pattern
+# Design Pattern
 
 * MVVM (Model-View-ViewModel) is one of the architectural patterns which enhances separation of concerns, it allows separating the user interface logic from the business (or the back-end) logic. Its target (with other MVC patterns goal) is to achieve the following principle “Keeping UI code simple and free of app logic in order to make it easier to manage
 
@@ -33,3 +33,6 @@
 * ViewModel: It manages UI-related data in a lifecycle-conscious way. It stores UI-related data that isn't destroyed on app rotations.
 
 * Repository: The repository depends on a persistent data model and a remote backend data source.
+
+![mvvm-architecture-pattern](https://user-images.githubusercontent.com/65492308/184433445-c245b60b-13f1-4c3c-ab37-32e0cfe23180.png)
+
