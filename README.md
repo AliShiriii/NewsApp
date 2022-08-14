@@ -1,3 +1,7 @@
+
+![news](https://user-images.githubusercontent.com/65492308/184536358-fc283b30-520a-4a36-bcae-8c684a5ee75b.png)
+
+
 # NewsApp
 
 * This app is a Play Store-level news app to show the world's news
