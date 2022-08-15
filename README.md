@@ -1,11 +1,8 @@
 
-![news(1)](https://user-images.githubusercontent.com/65492308/184536383-394e8c58-4aba-4507-84ed-7d6460208476.png)
-
-
 # NewsApp
 
 * This app is a Play Store-level news app to show the world's news
-
+* News app using API from https://newsapi.org/ News API, JSON API for live news and blog articles from media. News Feed is a simple app that gives you the latest and greatest news from multiple sources, so you don't have to switch between apps to stay informed.
 # Functionality
 
 * Breacking News 
