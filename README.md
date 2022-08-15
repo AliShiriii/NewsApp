@@ -11,15 +11,18 @@
 
 # Libraries used
 
-* Room
-* Viewmodel
-* Lifecycles
-* Livedata
-* Coroutines
-* Material library
-* Navigation Components
-* ViewBinding
-* DataStore(Preferences)
+   * Kotlin - official programming language for Android development .
+   * Coroutines - for asynchronous programming .
+   * Android Architecture Components - Collection of libraries that help you design robust, testable, and maintainable apps.
+   * LiveData - Data objects that notify views when the underlying database changes.
+   * ViewModel - Stores UI-related data that isn't destroyed on UI changes.
+   * Room - Access your app's SQLite database with in-app objects and compile-time checks.
+   * Navigation -
+   * dagger-hilt - Dependency Injection Framework (Kotlin).
+   * Retrofit - A type-safe HTTP client for Android and Java.
+   * Fragment
+   * Glide for image loading
+   * pretty time - format time
 
 # Design Pattern
 
