@@ -1,4 +1,6 @@
 
+
+
 # NewsApp
 
 * This app is a Play Store-level news app to show the world's news
