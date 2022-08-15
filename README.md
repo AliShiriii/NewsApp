@@ -1,4 +1,6 @@
 
+![news](https://user-images.githubusercontent.com/65492308/184654526-70750d53-4661-435d-a617-8a5f24b7ae00.png)
+
 
 
 # NewsApp
