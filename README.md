@@ -1,6 +1,5 @@
 
-![news](https://user-images.githubusercontent.com/65492308/184654526-70750d53-4661-435d-a617-8a5f24b7ae00.png)
-
+![news(1)](https://user-images.githubusercontent.com/65492308/184654648-cb25f668-2d3a-47ee-b561-5bf0b13f3f81.png)
 
 
 # NewsApp
