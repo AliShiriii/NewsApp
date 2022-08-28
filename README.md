@@ -43,3 +43,6 @@
 
 ![mvvm-architecture-pattern](https://user-images.githubusercontent.com/65492308/184433445-c245b60b-13f1-4c3c-ab37-32e0cfe23180.png)
 
+# Screens of the app
+
+![photo_2022-08-28_09-38-55](https://user-images.githubusercontent.com/65492308/187085698-1a4b32a8-b3d8-4244-aa5c-4e3e646c41f3.jpg)
