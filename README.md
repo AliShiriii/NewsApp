@@ -50,4 +50,7 @@
 
 ![photo_2022-08-28_09-38-55](https://user-images.githubusercontent.com/65492308/187085698-1a4b32a8-b3d8-4244-aa5c-4e3e646c41f3.jpg)
 
+
 ![photo_2022-08-28_09-50-16](https://user-images.githubusercontent.com/65492308/187085769-92c128e0-a996-4cdc-acbe-4973436dc48e.jpg)
+
+![photo_2022-08-28_09-49-51](https://user-images.githubusercontent.com/65492308/187085808-b371f46b-0b9a-49aa-bdd4-81575320d193.jpg)
